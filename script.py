@@ -16,33 +16,43 @@ group = firstgame.find(class_= "fi__info__group").get_text()
 location = firstgame.find(class_ = "fi__info__location").get_text()
 #team1 = firstgame.find(class_= "fi-t fi-i--4 home").get_text()
 score = firstgame.find(class_= "fi-s__scoreText").get_text()
-teams = firstgame.find(class_= "fi-t__n").get_text()
-
-"""print(date)
-print(group)
-print(location)
-print(team1)
-print(team2)"""
+teams = firstgame.find(class_= "fi-t__nText").get_text()
 
 date = [d.get_text() for d in group_stage.select(".fi-mu__info__datetime")]
 group = [g.get_text() for g in group_stage.select(".fi__info__group")]
-location = [l.get_text() for l in group_stage.select(".fi__info__location")]
-#team1 = [g.get_text() for g in group_stage.select(".fi-t fi-i--4 home .fi-t__n")]
+location = [l.get_text()[1:-1] for l in group_stage.select(".fi__info__location")]
 score = [s.get_text() for s in group_stage.select(".fi-s__scoreText")]
-teams = [t2.get_text() for t2 in group_stage.select(".fi-t__n")]
+teams = [t2.get_text() for t2 in group_stage.select(".fi-t__nText")]
 
-print(location[1])
+#Replace all \n, \r and white spaces and removes Local Time and adds UTC/GTM +1
+dateF = [x.replace('\r', '').replace('\n', '').replace('      ', '').replace('Local time', ' UTC/GMT +1') for x in date]
+groupF = [x.replace('\r', '').replace('\n', '') for x in group]
+locationF = [x.replace('\r', '').replace('\n', ' - ') for x in location]
+scoreF = [x.replace('\r', '').replace('\n', '').replace(' ', '') for x in score]
+
+Teste = [[]] * 48
+j = 0
+j2 = 0
+while j != 48:
+    Teste[j] = [(groupF[j],dateF[j],teams[j2],scoreF[j],teams[j2+1],locationF[j])]
+    j += 1
+    j2 += 2 
+print(Teste)
 
 i = 0
 i2 = 0
 f = open("FifaMatchesGroup_Stage.txt", "w")
 while i != 48:
-    f.write(date[i])
-    f.write(group[i])
-    f.write(location[i])
+    f.write(dateF[i])
+    f.write("\n")
+    f.write(groupF[i])
+    f.write("\n")
+    f.write(locationF[i])
+    f.write("\n")
     f.write(teams[i2])
     i2 += 1
-    f.write(score[i])
-    f.write(teams[i2])
+    f.write(" " + scoreF[i])
+    f.write(" " + teams[i2])
     i += 1
     i2 += 1
+    f.write("\n\n\n")
