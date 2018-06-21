@@ -14,7 +14,6 @@ firstgame = items[0]
 date = firstgame.find(class_= "fi-mu__info__datetime").get_text()
 group = firstgame.find(class_= "fi__info__group").get_text()
 location = firstgame.find(class_ = "fi__info__location").get_text()
-#team1 = firstgame.find(class_= "fi-t fi-i--4 home").get_text()
 score = firstgame.find(class_= "fi-s__scoreText").get_text()
 teams = firstgame.find(class_= "fi-t__nText").get_text()
 
@@ -24,21 +23,30 @@ location = [l.get_text()[1:-1] for l in group_stage.select(".fi__info__location"
 score = [s.get_text() for s in group_stage.select(".fi-s__scoreText")]
 teams = [t2.get_text() for t2 in group_stage.select(".fi-t__nText")]
 
-#Replace all \n, \r and white spaces and removes Local Time and adds UTC/GTM +1
+#Replace all \n, \r and white spaces, removes Local Time and adds UTC/GTM +1
 dateF = [x.replace('\r', '').replace('\n', '').replace('      ', '').replace('Local time', ' UTC/GMT +1') for x in date]
 groupF = [x.replace('\r', '').replace('\n', '') for x in group]
 locationF = [x.replace('\r', '').replace('\n', ' - ') for x in location]
 scoreF = [x.replace('\r', '').replace('\n', '').replace(' ', '') for x in score]
 
-Teste = [[]] * 48
+#Replace the time in score (game not played yet) to NULL
+p = 0
+while p != 48:
+    if len(scoreF[p]) > 3:
+        scoreF[p] = "NULL"
+    p += 1
+
+#Put all values in one list.
+GameInfo = [[]] * 48 #Inicialize the list with 48 positions
 j = 0
 j2 = 0
 while j != 48:
-    Teste[j] = [(groupF[j],dateF[j],teams[j2],scoreF[j],teams[j2+1],locationF[j])]
+    GameInfo[j] = [(groupF[j],dateF[j],teams[j2],scoreF[j],teams[j2+1],locationF[j])]
     j += 1
     j2 += 2 
-print(Teste)
+print(GameInfo)
 
+#Writes in a file the information of every match
 i = 0
 i2 = 0
 f = open("FifaMatchesGroup_Stage.txt", "w")
