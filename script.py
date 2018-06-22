@@ -16,7 +16,7 @@ print(page.status_code)
 group_stage = soup.find(class_= "fi-matchlist")
 items = soup.find_all(class_= "fi-mu-list")
 firstgame = items[0]
-#print(firstgame.prettify())
+# print(firstgame.prettify())
 
 #Gets all info of matches
 date = [d.get_text() for d in group_stage.select(".fi-mu__info__datetime")]
@@ -26,7 +26,7 @@ score = [s.get_text() for s in group_stage.select(".fi-s__scoreText")]
 teams = [t2.get_text() for t2 in group_stage.select(".fi-t__nText")]
 
 #Replace all \n, \r and white spaces, removes Local Time and adds UTC/GTM +1
-dateF = [x.replace('\r', '').replace('\n', '').replace('      ', '').replace('Local time', ' UTC/GMT +1') for x in date]
+dateF = [x.replace('\r', '').replace('\n', '').replace('      ', '').replace('Local time', ' Local time') for x in date]
 groupF = [x.replace('\r', '').replace('\n', '') for x in group]
 locationF = [x.replace('\r', '').replace('\n', ' - ') for x in location]
 scoreF = [x.replace('\r', '').replace('\n', '').replace(' ', '') for x in score]
@@ -57,6 +57,7 @@ print(GameInfo)
 i = 0
 i2 = 0
 f = open("FifaMatchesGroup_Stage.txt", "w")
+f.write("!!!Notice that local time is the time of city where the game will be played and not your time.!!!\n\n")
 while i != all_matches:
     f.write(groupF[i] + ": " + teams[i2] + " " + scoreF[i] + " "
      + teams[i2+1] + " - " + dateF[i] + " - " + locationF[i])
@@ -71,9 +72,6 @@ try:
     #Check if table FifaWorldCup does not exist and create it
     cursor.execute('''CREATE TABLE IF NOT EXISTS
                       FifaWorldCup(id INTEGER PRIMARY KEY, MatchGroup TEXT, 
-                      TeamHome TEXT, Score TEXT, TeamAway TEXT, Date TEXT, Location TEXT, GameN TEXT unique)''')
-    cursor.execute('''CREATE TABLE IF NOT EXISTS
-                      ToUp(id INTEGER PRIMARY KEY, MatchGroup TEXT, 
                       TeamHome TEXT, Score TEXT, TeamAway TEXT, Date TEXT, Location TEXT, GameN TEXT unique)''')
     #Commit the change
     db.commit()
@@ -91,17 +89,19 @@ cursor = db.cursor()
 dbID = 0
 try:
     with db:
+        db.execute("DELETE FROM FifaWorldCup")
         db.executemany('''INSERT INTO FifaWorldCup(MatchGroup, TeamHome, Score, TeamAway, Date, Location, GameN)
                   VALUES(?,?,?,?,?,?,?)''', GameInfo)
         db.commit()
-except sqlite3.IntegrityError:
-    db.execute("DELETE FROM ToUp")
-    db.executemany('''INSERT INTO ToUp(MatchGroup, TeamHome, Score, TeamAway, Date, Location, GameN)
-                  VALUES(?,?,?,?,?,?,?)''', GameInfo)
-    db.commit()
+except Exception as e:
+    #Roll back any change if something goes wrong
+    print("Something went wrong")
+    db.rollback()
+    raise e
 finally:
     db.close()
 
+#Code to update score
 # db = sqlite3.connect('db.sqlite3')
 # cursor = db.cursor()
 # while dbID != all_matches:

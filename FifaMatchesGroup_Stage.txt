@@ -1,96 +1,98 @@
-Group A: Russia 5-0 Saudi Arabia - 14 Jun 2018 - 18:00 UTC/GMT +1 - Luzhniki Stadium - Moscow
+!!!Notice that local time is the time of city where the game will be played and not your time.!!!
 
-Group A: Egypt 0-1 Uruguay - 15 Jun 2018 - 17:00 UTC/GMT +1 - Ekaterinburg Arena - Ekaterinburg
+Group A: Russia 5-0 Saudi Arabia - 14 Jun 2018 - 18:00 Local time - Luzhniki Stadium - Moscow
 
-Group B: Morocco 0-1 IR Iran - 15 Jun 2018 - 18:00 UTC/GMT +1 - Saint Petersburg Stadium - St. Petersburg
+Group A: Egypt 0-1 Uruguay - 15 Jun 2018 - 17:00 Local time - Ekaterinburg Arena - Ekaterinburg
 
-Group B: Portugal 3-3 Spain - 15 Jun 2018 - 21:00 UTC/GMT +1 - Fisht Stadium - Sochi
+Group B: Morocco 0-1 IR Iran - 15 Jun 2018 - 18:00 Local time - Saint Petersburg Stadium - St. Petersburg
 
-Group C: France 2-1 Australia - 16 Jun 2018 - 13:00 UTC/GMT +1 - Kazan Arena - Kazan
+Group B: Portugal 3-3 Spain - 15 Jun 2018 - 21:00 Local time - Fisht Stadium - Sochi
 
-Group D: Argentina 1-1 Iceland - 16 Jun 2018 - 16:00 UTC/GMT +1 - Spartak Stadium - Moscow
+Group C: France 2-1 Australia - 16 Jun 2018 - 13:00 Local time - Kazan Arena - Kazan
 
-Group C: Peru 0-1 Denmark - 16 Jun 2018 - 19:00 UTC/GMT +1 - Mordovia Arena - Saransk
+Group D: Argentina 1-1 Iceland - 16 Jun 2018 - 16:00 Local time - Spartak Stadium - Moscow
 
-Group D: Croatia 2-0 Nigeria - 16 Jun 2018 - 21:00 UTC/GMT +1 - Kaliningrad Stadium - Kaliningrad
+Group C: Peru 0-1 Denmark - 16 Jun 2018 - 19:00 Local time - Mordovia Arena - Saransk
 
-Group E: Costa Rica 0-1 Serbia - 17 Jun 2018 - 16:00 UTC/GMT +1 - Samara Arena - Samara
+Group D: Croatia 2-0 Nigeria - 16 Jun 2018 - 21:00 Local time - Kaliningrad Stadium - Kaliningrad
 
-Group F: Germany 0-1 Mexico - 17 Jun 2018 - 18:00 UTC/GMT +1 - Luzhniki Stadium - Moscow
+Group E: Costa Rica 0-1 Serbia - 17 Jun 2018 - 16:00 Local time - Samara Arena - Samara
 
-Group E: Brazil 1-1 Switzerland - 17 Jun 2018 - 21:00 UTC/GMT +1 - Rostov Arena - Rostov-On-Don
+Group F: Germany 0-1 Mexico - 17 Jun 2018 - 18:00 Local time - Luzhniki Stadium - Moscow
 
-Group F: Sweden 1-0 Korea Republic - 18 Jun 2018 - 15:00 UTC/GMT +1 - Nizhny Novgorod Stadium - Nizhny Novgorod
+Group E: Brazil 1-1 Switzerland - 17 Jun 2018 - 21:00 Local time - Rostov Arena - Rostov-On-Don
 
-Group G: Belgium 3-0 Panama - 18 Jun 2018 - 18:00 UTC/GMT +1 - Fisht Stadium - Sochi
+Group F: Sweden 1-0 Korea Republic - 18 Jun 2018 - 15:00 Local time - Nizhny Novgorod Stadium - Nizhny Novgorod
 
-Group G: Tunisia 1-2 England - 18 Jun 2018 - 21:00 UTC/GMT +1 - Volgograd Arena - Volgograd
+Group G: Belgium 3-0 Panama - 18 Jun 2018 - 18:00 Local time - Fisht Stadium - Sochi
 
-Group H: Colombia 1-2 Japan - 19 Jun 2018 - 15:00 UTC/GMT +1 - Mordovia Arena - Saransk
+Group G: Tunisia 1-2 England - 18 Jun 2018 - 21:00 Local time - Volgograd Arena - Volgograd
 
-Group H: Poland 1-2 Senegal - 19 Jun 2018 - 18:00 UTC/GMT +1 - Spartak Stadium - Moscow
+Group H: Colombia 1-2 Japan - 19 Jun 2018 - 15:00 Local time - Mordovia Arena - Saransk
 
-Group A: Russia 3-1 Egypt - 19 Jun 2018 - 21:00 UTC/GMT +1 - Saint Petersburg Stadium - St. Petersburg
+Group H: Poland 1-2 Senegal - 19 Jun 2018 - 18:00 Local time - Spartak Stadium - Moscow
 
-Group B: Portugal 1-0 Morocco - 20 Jun 2018 - 15:00 UTC/GMT +1 - Luzhniki Stadium - Moscow
+Group A: Russia 3-1 Egypt - 19 Jun 2018 - 21:00 Local time - Saint Petersburg Stadium - St. Petersburg
 
-Group A: Uruguay 1-0 Saudi Arabia - 20 Jun 2018 - 18:00 UTC/GMT +1 - Rostov Arena - Rostov-On-Don
+Group B: Portugal 1-0 Morocco - 20 Jun 2018 - 15:00 Local time - Luzhniki Stadium - Moscow
 
-Group B: IR Iran 0-1 Spain - 20 Jun 2018 - 21:00 UTC/GMT +1 - Kazan Arena - Kazan
+Group A: Uruguay 1-0 Saudi Arabia - 20 Jun 2018 - 18:00 Local time - Rostov Arena - Rostov-On-Don
 
-Group C: Denmark 1-1 Australia - 21 Jun 2018 - 16:00 UTC/GMT +1 - Samara Arena - Samara
+Group B: IR Iran 0-1 Spain - 20 Jun 2018 - 21:00 Local time - Kazan Arena - Kazan
 
-Group C: France 1-0 Peru - 21 Jun 2018 - 20:00 UTC/GMT +1 - Ekaterinburg Arena - Ekaterinburg
+Group C: Denmark 1-1 Australia - 21 Jun 2018 - 16:00 Local time - Samara Arena - Samara
 
-Group D: Argentina NULL Croatia - 21 Jun 2018 - 21:00 UTC/GMT +1 - Nizhny Novgorod Stadium - Nizhny Novgorod
+Group C: France 1-0 Peru - 21 Jun 2018 - 20:00 Local time - Ekaterinburg Arena - Ekaterinburg
 
-Group E: Brazil NULL Costa Rica - 22 Jun 2018 - 15:00 UTC/GMT +1 - Saint Petersburg Stadium - St. Petersburg
+Group D: Argentina 0-3 Croatia - 21 Jun 2018 - 21:00 Local time - Nizhny Novgorod Stadium - Nizhny Novgorod
 
-Group D: Nigeria NULL Iceland - 22 Jun 2018 - 18:00 UTC/GMT +1 - Volgograd Arena - Volgograd
+Group E: Brazil NULL Costa Rica - 22 Jun 2018 - 15:00 Local time - Saint Petersburg Stadium - St. Petersburg
 
-Group E: Serbia NULL Switzerland - 22 Jun 2018 - 20:00 UTC/GMT +1 - Kaliningrad Stadium - Kaliningrad
+Group D: Nigeria NULL Iceland - 22 Jun 2018 - 18:00 Local time - Volgograd Arena - Volgograd
 
-Group G: Belgium NULL Tunisia - 23 Jun 2018 - 15:00 UTC/GMT +1 - Spartak Stadium - Moscow
+Group E: Serbia NULL Switzerland - 22 Jun 2018 - 20:00 Local time - Kaliningrad Stadium - Kaliningrad
 
-Group F: Korea Republic NULL Mexico - 23 Jun 2018 - 18:00 UTC/GMT +1 - Rostov Arena - Rostov-On-Don
+Group G: Belgium NULL Tunisia - 23 Jun 2018 - 15:00 Local time - Spartak Stadium - Moscow
 
-Group F: Germany NULL Sweden - 23 Jun 2018 - 21:00 UTC/GMT +1 - Fisht Stadium - Sochi
+Group F: Korea Republic NULL Mexico - 23 Jun 2018 - 18:00 Local time - Rostov Arena - Rostov-On-Don
 
-Group G: England NULL Panama - 24 Jun 2018 - 15:00 UTC/GMT +1 - Nizhny Novgorod Stadium - Nizhny Novgorod
+Group F: Germany NULL Sweden - 23 Jun 2018 - 21:00 Local time - Fisht Stadium - Sochi
 
-Group H: Japan NULL Senegal - 24 Jun 2018 - 20:00 UTC/GMT +1 - Ekaterinburg Arena - Ekaterinburg
+Group G: England NULL Panama - 24 Jun 2018 - 15:00 Local time - Nizhny Novgorod Stadium - Nizhny Novgorod
 
-Group H: Poland NULL Colombia - 24 Jun 2018 - 21:00 UTC/GMT +1 - Kazan Arena - Kazan
+Group H: Japan NULL Senegal - 24 Jun 2018 - 20:00 Local time - Ekaterinburg Arena - Ekaterinburg
 
-Group A: Uruguay NULL Russia - 25 Jun 2018 - 18:00 UTC/GMT +1 - Samara Arena - Samara
+Group H: Poland NULL Colombia - 24 Jun 2018 - 21:00 Local time - Kazan Arena - Kazan
 
-Group A: Saudi Arabia NULL Egypt - 25 Jun 2018 - 17:00 UTC/GMT +1 - Volgograd Arena - Volgograd
+Group A: Uruguay NULL Russia - 25 Jun 2018 - 18:00 Local time - Samara Arena - Samara
 
-Group B: Spain NULL Morocco - 25 Jun 2018 - 20:00 UTC/GMT +1 - Kaliningrad Stadium - Kaliningrad
+Group A: Saudi Arabia NULL Egypt - 25 Jun 2018 - 17:00 Local time - Volgograd Arena - Volgograd
 
-Group B: IR Iran NULL Portugal - 25 Jun 2018 - 21:00 UTC/GMT +1 - Mordovia Arena - Saransk
+Group B: Spain NULL Morocco - 25 Jun 2018 - 20:00 Local time - Kaliningrad Stadium - Kaliningrad
 
-Group C: Australia NULL Peru - 26 Jun 2018 - 17:00 UTC/GMT +1 - Fisht Stadium - Sochi
+Group B: IR Iran NULL Portugal - 25 Jun 2018 - 21:00 Local time - Mordovia Arena - Saransk
 
-Group C: Denmark NULL France - 26 Jun 2018 - 17:00 UTC/GMT +1 - Luzhniki Stadium - Moscow
+Group C: Australia NULL Peru - 26 Jun 2018 - 17:00 Local time - Fisht Stadium - Sochi
 
-Group D: Nigeria NULL Argentina - 26 Jun 2018 - 21:00 UTC/GMT +1 - Saint Petersburg Stadium - St. Petersburg
+Group C: Denmark NULL France - 26 Jun 2018 - 17:00 Local time - Luzhniki Stadium - Moscow
 
-Group D: Iceland NULL Croatia - 26 Jun 2018 - 21:00 UTC/GMT +1 - Rostov Arena - Rostov-On-Don
+Group D: Nigeria NULL Argentina - 26 Jun 2018 - 21:00 Local time - Saint Petersburg Stadium - St. Petersburg
 
-Group F: Korea Republic NULL Germany - 27 Jun 2018 - 17:00 UTC/GMT +1 - Kazan Arena - Kazan
+Group D: Iceland NULL Croatia - 26 Jun 2018 - 21:00 Local time - Rostov Arena - Rostov-On-Don
 
-Group F: Mexico NULL Sweden - 27 Jun 2018 - 19:00 UTC/GMT +1 - Ekaterinburg Arena - Ekaterinburg
+Group F: Korea Republic NULL Germany - 27 Jun 2018 - 17:00 Local time - Kazan Arena - Kazan
 
-Group E: Serbia NULL Brazil - 27 Jun 2018 - 21:00 UTC/GMT +1 - Spartak Stadium - Moscow
+Group F: Mexico NULL Sweden - 27 Jun 2018 - 19:00 Local time - Ekaterinburg Arena - Ekaterinburg
 
-Group E: Switzerland NULL Costa Rica - 27 Jun 2018 - 21:00 UTC/GMT +1 - Nizhny Novgorod Stadium - Nizhny Novgorod
+Group E: Serbia NULL Brazil - 27 Jun 2018 - 21:00 Local time - Spartak Stadium - Moscow
 
-Group H: Japan NULL Poland - 28 Jun 2018 - 17:00 UTC/GMT +1 - Volgograd Arena - Volgograd
+Group E: Switzerland NULL Costa Rica - 27 Jun 2018 - 21:00 Local time - Nizhny Novgorod Stadium - Nizhny Novgorod
 
-Group H: Senegal NULL Colombia - 28 Jun 2018 - 18:00 UTC/GMT +1 - Samara Arena - Samara
+Group H: Japan NULL Poland - 28 Jun 2018 - 17:00 Local time - Volgograd Arena - Volgograd
 
-Group G: Panama NULL Tunisia - 28 Jun 2018 - 21:00 UTC/GMT +1 - Mordovia Arena - Saransk
+Group H: Senegal NULL Colombia - 28 Jun 2018 - 18:00 Local time - Samara Arena - Samara
 
-Group G: England NULL Belgium - 28 Jun 2018 - 20:00 UTC/GMT +1 - Kaliningrad Stadium - Kaliningrad
+Group G: Panama NULL Tunisia - 28 Jun 2018 - 21:00 Local time - Mordovia Arena - Saransk
+
+Group G: England NULL Belgium - 28 Jun 2018 - 20:00 Local time - Kaliningrad Stadium - Kaliningrad
 
