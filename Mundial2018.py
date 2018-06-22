@@ -26,8 +26,6 @@ def SortByAllGroups():
 
 def SortByGamesTeam(Teams):
     Test = True
-    Test2 = True
-    i = 0
     print("\n\n")
     #Print games by user group input
     while Test:
@@ -35,51 +33,50 @@ def SortByGamesTeam(Teams):
         print(Teams)
         search = input("Name of team (ex: Portugal, be sure the name has Capitalize letters "
                         + "and must be in english): ")
-        Test2 = True
-        i = 0
-        while Test2:
-            if search == Teams[i]:
-                print("\n\n")
-                for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE TeamHome = ?", (search,)):
-                    print('{0}: {1} {2} {3} on {4} in {5}'.format(row[1], row[2], row[3], row[4], row[5], row[6]))
-                for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE TeamAway = ?", (search,)):
-                    print('{0}: {1} {2} {3} on {4} in {5}'.format(row[1], row[2], row[3], row[4], row[5], row[6]))
-                Test = False
-                Test2 = False
-            elif i == 31:
-                print("\n" * 5 + "Enter a valid team/name!")
-                Test2 = False
-            i += 1
+        if search in Teams:
+            print("\n\n")
+            for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE TeamHome = ?", (search,)):
+                print('{0}: {1} {2} {3} on {4} in {5}'.format(row[1], row[2], row[3], row[4], row[5], row[6]))
+            for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE TeamAway = ?", (search,)):
+                print('{0}: {1} {2} {3} on {4} in {5}'.format(row[1], row[2], row[3], row[4], row[5], row[6]))
+            Test = False
+        else:
+            print("\n" * 5 + "Enter a valid team/name!")
 
 def SortByLocation(Locals):
     Test = True
-    Test2 = True
-    i = 0
     while Test:
         print("All locations: ")
         print(Locals)
         search = input("\nLocation name (Please Copy & Paste from the list above without " 
                         + "\'\' to search the name of location): ")
-        Test2 = True
-        i = 0
-        while Test2:
-            if search == Locals[i]:
-                print("\n\n")
-                for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE Location = ?", (search,)):
-                    print('{0}: {1} {2} {3} on {4} - {5}'.format(row[6], row[2], row[3], row[4], row[5], row[1]))
-                Test = False
-                Test2 = False
-            elif i == 11:
-                print("\n" * 5 + "Enter a valid location!")
-                Test2 = False
-            i += 1
+        if search in Locals:
+            #Code that is executed when is valid input
+            print("\n\n")
+            for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE Location = ?", (search,)):
+                print('{0}: {1} {2} {3} on {4} - {5}'.format(row[6], row[2], row[3], row[4], row[5], row[1]))
+            Test = False
+        else:
+            print("\n" * 5 + "Enter a valid location!")
 
 def SortByAllLocation():
     for row in cursor.execute("SELECT * FROM FifaWorldCup ORDER BY Location"):
         print('{0}: {1} {2} {3} on {4} - {5}'.format(row[6], row[2], row[3], row[4], row[5], row[1]))
 
 def GoalsByTeam(Teams, Goals):
-    print(" ")
+    Test = True
+    print("\n\n")
+    #Print games by user group input
+    while Test:
+        print("List of teams: ")
+        print(Teams)
+        search = input("Name of team (ex: Portugal, be sure the name has Capitalize letters "
+                        + "and must be in english): ")
+        if search in Teams:
+            #Code that is executed when is valid input
+            Test = False
+        else:
+            print("\n" * 5 + "Enter a valid team/name!")
 
 def GoalPerGame(Goals):
     print("ASD")
@@ -111,7 +108,7 @@ for row in cursor.execute('''SELECT DISTINCT Location FROM FifaWorldCup ORDER BY
 #SortByGroup()
 #SortByAllGroups()
 #SortByGamesTeam(Teams)
-#SortByLocation(Locals)
+SortByLocation(Locals)
 #SortByAllLocation()
 #GoalsByTeam(Teams, Goals)
 
