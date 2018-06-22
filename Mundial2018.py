@@ -24,28 +24,37 @@ def SortByAllGroups():
     for row in cursor.execute('SELECT * FROM FifaWorldCup ORDER BY MatchGroup'):
         print('{0} {1} {2}, {3} in {4}'.format(row[1], row[2], row[3], row[4], row[5]))
 
-def SortByGamesTeam():
-    #List that saves the teams names to show user what he must enter as input (Remove duplicates too)
-    Teams = []
-    for row in cursor.execute('''SELECT DISTINCT TeamHome FROM FifaWorldCup ORDER BY TeamHome'''):
-        Teams.append(row[0])
-    print("List of teams: ")
-    print(Teams)
-    search = input("Name of team (ex: Portugal, be sure the name has Capitalize letters "
-                    + "and must be in english): ")
-    #Print games by user group input
-    for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE TeamHome = ?", (search,)):
-        print('{0}: {1} {2} {3} on {4} in {5}'.format(row[1], row[2], row[3], row[4], row[5], row[6]))
-    for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE TeamAway = ?", (search,)):
-        print('{0}: {1} {2} {3} on {4} in {5}'.format(row[1], row[2], row[3], row[4], row[5], row[6]))
-
-def SortByLocation():
-    Locals = []
+def SortByGamesTeam(Teams):
     Test = True
     Test2 = True
     i = 0
-    for row in cursor.execute('''SELECT DISTINCT Location FROM FifaWorldCup ORDER BY Location'''):
-        Locals.append(row[0])
+    print("\n\n")
+    #Print games by user group input
+    while Test:
+        print("List of teams: ")
+        print(Teams)
+        search = input("Name of team (ex: Portugal, be sure the name has Capitalize letters "
+                        + "and must be in english): ")
+        Test2 = True
+        i = 0
+        while Test2:
+            if search == Teams[i]:
+                print("\n\n")
+                for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE TeamHome = ?", (search,)):
+                    print('{0}: {1} {2} {3} on {4} in {5}'.format(row[1], row[2], row[3], row[4], row[5], row[6]))
+                for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE TeamAway = ?", (search,)):
+                    print('{0}: {1} {2} {3} on {4} in {5}'.format(row[1], row[2], row[3], row[4], row[5], row[6]))
+                Test = False
+                Test2 = False
+            elif i == 31:
+                print("\n" * 5 + "Enter a valid team/name!")
+                Test2 = False
+            i += 1
+
+def SortByLocation(Locals):
+    Test = True
+    Test2 = True
+    i = 0
     while Test:
         print("All locations: ")
         print(Locals)
@@ -55,6 +64,7 @@ def SortByLocation():
         i = 0
         while Test2:
             if search == Locals[i]:
+                print("\n\n")
                 for row in cursor.execute("SELECT * FROM FifaWorldCup WHERE Location = ?", (search,)):
                     print('{0}: {1} {2} {3} on {4} - {5}'.format(row[6], row[2], row[3], row[4], row[5], row[1]))
                 Test = False
@@ -62,14 +72,14 @@ def SortByLocation():
             elif i == 11:
                 print("\n" * 5 + "Enter a valid location!")
                 Test2 = False
-            i+=1
+            i += 1
 
 def SortByAllLocation():
     for row in cursor.execute("SELECT * FROM FifaWorldCup ORDER BY Location"):
         print('{0}: {1} {2} {3} on {4} - {5}'.format(row[6], row[2], row[3], row[4], row[5], row[1]))
 
-def GoalsByTeam(Goals):
-    print("ASD")
+def GoalsByTeam(Teams, Goals):
+    print(" ")
 
 def GoalPerGame(Goals):
     print("ASD")
@@ -88,13 +98,21 @@ def EveryGoalRegistered(Goals):
 db = sqlite3.connect('db.sqlite3')
 cursor = db.cursor()
 
+Teams = []
+for row in cursor.execute('''SELECT DISTINCT TeamHome FROM FifaWorldCup ORDER BY TeamHome'''):
+    Teams.append(row[0])
+Locals = []
+for row in cursor.execute('''SELECT DISTINCT Location FROM FifaWorldCup ORDER BY Location'''):
+    Locals.append(row[0])
+
 #print("OPTIONS")
 #op = input("Op: ")
 
 #SortByGroup()
 #SortByAllGroups()
-#SortByGamesTeam()
-#SortByLocation()
+#SortByGamesTeam(Teams)
+#SortByLocation(Locals)
 #SortByAllLocation()
+#GoalsByTeam(Teams, Goals)
 
 db.close()
