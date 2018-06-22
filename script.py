@@ -5,7 +5,9 @@ import sqlite3
 
 page = requests.get("https://www.fifa.com/worldcup/matches/")
 soup = BeautifulSoup(page.content, 'html.parser')
+print("Code:")
 print(page.status_code)
+print("\n\n")
 
 #Remove comments only to test offline
 # op = open("teste.html")
@@ -34,12 +36,20 @@ scoreF = [x.replace('\r', '').replace('\n', '').replace(' ', '') for x in score]
 #Stores the length of matches
 all_matches = len(date)
 
-#Replace the time in score (game not played yet) to NULL
-p = 0
-while p != all_matches:
-    if len(scoreF[p]) > 3:
-        scoreF[p] = "NULL"
-    p += 1
+#Replace the time in score (game not played yet) to NULL and Goals stores the goals
+i = 0
+i2 = 0
+Goals = []
+while i != all_matches:
+    if len(scoreF[i]) > 3:
+        scoreF[i] = "NULL"
+    if scoreF[i][:1] != "N":
+        Goals.append(scoreF[i][:1])
+        Goals.append(scoreF[i][-1:])
+    i2 += 2
+    i += 1
+#Converts every string in Goals to INT
+Goals = list(map(int, Goals))
 
 #Put all values in one list.
 GameInfo = [] * all_matches #Inicialize the list with 48 positions
