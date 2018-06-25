@@ -1,5 +1,6 @@
 import sqlite3
 from script import Goals, teams, Games
+import time
 
 #Separates the output of script.py
 print("\nOutput from script.py.")
@@ -80,7 +81,7 @@ def GoalsByTeam(Teams, Goals):
                 for i in range(len(j)):
                     golos += Goals[j[i]]
             except IndexError:
-                print(search + ": {0}".format(golos) + " golos")
+                print(search + ": {0}".format(golos) + " goals")
             Test = False
         else:
             print("\n" * 5 + "Enter a valid team name!")
@@ -123,18 +124,45 @@ Locals = []
 for row in cursor.execute('''SELECT DISTINCT Location FROM FifaWorldCup ORDER BY Location'''):
     Locals.append(row[0])
 
-#print("OPTIONS")
-#op = input("Op: ")
-
-#SortByGroup()
-#SortByAllGroups()
-#SortByGamesTeam(Teams)
-#SortByLocation(Locals)
-#SortByAllLocation()
-#GoalsByTeam(Teams, Goals)
-#AvGoalsPerGame(Golos, Games)
-#AvGoalsPerDay(Golos)
-GoalsPerGroup(Goals)
-#EveryGoalRegistered(Golos)
+Loop = True
+while Loop:
+    time.sleep(2)
+    print("\n")
+    print("1 - User Group Info | 2 - All groups by order | 3 - User Team Info | 4 - User Location Info "
+            + "| 5 - All locations by order | 6 - User team goals | 7 - Average goals per game "
+            + "| 8 - Average goals per day | 9 - User Group Goals | 10 - Every goal so far | 0 - Exit")
+    op = input("Opção: ")
+    if op == "0":
+        exit()
+    elif op == "1":
+        print("\n" * 5)
+        SortByGroup()
+    elif op == "2":
+        print("\n" * 5)
+        SortByAllGroups()
+    elif op == "3":
+        print("\n" * 5)
+        SortByGamesTeam(Teams)
+    elif op == "4":
+        print("\n" * 5)
+        SortByLocation(Locals)
+    elif op == "5":
+        print("\n" * 5)
+        SortByAllLocation()
+    elif op == "6":
+        print("\n" * 5)
+        GoalsByTeam(Teams, Goals)
+    elif op == "7":
+        print("\n" * 5)
+        AvGoalsPerGame(Golos, Games)
+    elif op == "8":
+        print("\n" * 5)
+        AvGoalsPerDay(Golos)
+    elif op == "9":
+        print("\n" * 5)
+        GoalsPerGroup(Goals)
+    elif op == "10":
+        print("\n" * 5)
+        EveryGoalRegistered(Golos)
 
 db.close()

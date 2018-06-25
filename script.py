@@ -37,12 +37,10 @@ scoreF = [x.replace('\r', '').replace('\n', '').replace(' ', '') for x in score]
 all_matches = len(date)
 
 #Replace the time in score (game not played yet) to NULL and Goals stores the goals
-i = 0
-i2 = 0
 Goals = []
 Goals2 = []
 Games = 0
-while i != all_matches:
+for i in range(all_matches):
     if len(scoreF[i]) > 3:
         scoreF[i] = "NULL"
     if scoreF[i][:1] != "N":
@@ -56,8 +54,7 @@ while i != all_matches:
         #-1 means that the game didn't happen yet.
         Goals2.append("-1")
         Goals2.append("-1")
-    i2 += 2
-    i += 1
+
 #Converts every string in Goals and Goals2 to INT
 Goals = list(map(int, Goals))
 Goals2 = list(map(int, Goals2))
@@ -65,24 +62,20 @@ Goals2 = list(map(int, Goals2))
 #Put all values in one list.
 GameInfo = [] * all_matches #Inicialize the list with 48 positions
 GameN = 1
-j = 0
 j2 = 0
-while j != all_matches:
+for j in range(all_matches):
     GameInfo.append((groupF[j],teams[j2],scoreF[j],teams[j2+1],dateF[j],locationF[j], GameN, Goals2[j2], Goals2[j2+1]))
-    j += 1
     j2 += 2
     GameN += 1
 print(GameInfo)
 
 #Writes in a file the information of every match
-i = 0
 i2 = 0
 f = open("FifaMatchesGroup_Stage.txt", "w")
 f.write("!!!Notice that local time is the time of city where the game will be played and not your time.!!!\n\n")
-while i != all_matches:
+for i in range(all_matches):
     f.write(groupF[i] + ": " + teams[i2] + " " + scoreF[i] + " "
      + teams[i2+1] + " - " + dateF[i] + " - " + locationF[i])
-    i += 1
     i2 += 2
     f.write("\n\n")
 
