@@ -1,5 +1,5 @@
 import sqlite3
-from script import Goals
+from script import Goals, teams, Games
 
 #Separates the output of script.py
 print("\nOutput from script.py.")
@@ -41,7 +41,7 @@ def SortByGamesTeam(Teams):
                 print('{0}: {1} {2} {3} on {4} in {5}'.format(row[1], row[2], row[3], row[4], row[5], row[6]))
             Test = False
         else:
-            print("\n" * 5 + "Enter a valid team/name!")
+            print("\n" * 5 + "Enter a valid team name!")
 
 def SortByLocation(Locals):
     Test = True
@@ -65,6 +65,7 @@ def SortByAllLocation():
 
 def GoalsByTeam(Teams, Goals):
     Test = True
+    golos = 0
     print("\n\n")
     #Print games by user group input
     while Test:
@@ -74,27 +75,47 @@ def GoalsByTeam(Teams, Goals):
                         + "and must be in english): ")
         if search in Teams:
             #Code that is executed when is valid input
+            j = [i for i, x in enumerate(teams) if x == search]
+            try:    
+                for i in range(len(j)):
+                    golos += Goals[j[i]]
+            except IndexError:
+                print(search + ": {0}".format(golos) + " golos")
             Test = False
         else:
-            print("\n" * 5 + "Enter a valid team/name!")
+            print("\n" * 5 + "Enter a valid team name!")
 
-def GoalPerGame(Goals):
-    print("ASD")
+def AvGoalsPerGame(Golos, Games):
+    av = Golos / Games
+    print("Average goals per game:", av)
 
-def GoalPerDay(Goals):
-    print("ASD")
+def AvGoalsPerDay(Golos):
+    av = Golos / 14
+    print("Average goals per day:", av)
+    
+def GoalsPerGroup(Goals):
+    golosG = 0
+    Test = True
+    for row in cursor.execute("SELECT MatchGroup, GH, GA FROM FifaWorldCup ORDER BY MatchGroup"):
+        if (row[1] and row [2]) > (-1):
+            golosG += row[1] + row[2]
+            Test = True
+        elif Test:
+            print('{0}: {1}'.format(row[0], golosG))
+            golosG = 0
+            Test = False
 
-def GoalPerGroup(Goals):
-    print("ASD")
-
-def EveryGoalRegistered(Goals):
-    print("ASD")
+def EveryGoalRegistered(Golos):
+    print("Total number of goals so far:", Golos)
 
 
 #Connects to db
 db = sqlite3.connect('db.sqlite3')
 cursor = db.cursor()
 
+Golos = 0
+for i in range(len(Goals)):
+    Golos += Goals[i]
 Teams = []
 for row in cursor.execute('''SELECT DISTINCT TeamHome FROM FifaWorldCup ORDER BY TeamHome'''):
     Teams.append(row[0])
@@ -108,8 +129,12 @@ for row in cursor.execute('''SELECT DISTINCT Location FROM FifaWorldCup ORDER BY
 #SortByGroup()
 #SortByAllGroups()
 #SortByGamesTeam(Teams)
-SortByLocation(Locals)
+#SortByLocation(Locals)
 #SortByAllLocation()
 #GoalsByTeam(Teams, Goals)
+#AvGoalsPerGame(Golos, Games)
+#AvGoalsPerDay(Golos)
+GoalsPerGroup(Goals)
+#EveryGoalRegistered(Golos)
 
 db.close()

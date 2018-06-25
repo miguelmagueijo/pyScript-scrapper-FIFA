@@ -40,16 +40,27 @@ all_matches = len(date)
 i = 0
 i2 = 0
 Goals = []
+Goals2 = []
+Games = 0
 while i != all_matches:
     if len(scoreF[i]) > 3:
         scoreF[i] = "NULL"
     if scoreF[i][:1] != "N":
         Goals.append(scoreF[i][:1])
         Goals.append(scoreF[i][-1:])
+        #Goals2 is to insert on db the score of team instead of game
+        Goals2.append(scoreF[i][:1])
+        Goals2.append(scoreF[i][-1:])
+        Games += 1
+    else:
+        #-1 means that the game didn't happen yet.
+        Goals2.append("-1")
+        Goals2.append("-1")
     i2 += 2
     i += 1
-#Converts every string in Goals to INT
+#Converts every string in Goals and Goals2 to INT
 Goals = list(map(int, Goals))
+Goals2 = list(map(int, Goals2))
 
 #Put all values in one list.
 GameInfo = [] * all_matches #Inicialize the list with 48 positions
@@ -57,7 +68,7 @@ GameN = 1
 j = 0
 j2 = 0
 while j != all_matches:
-    GameInfo.append((groupF[j],teams[j2],scoreF[j],teams[j2+1],dateF[j],locationF[j], GameN))
+    GameInfo.append((groupF[j],teams[j2],scoreF[j],teams[j2+1],dateF[j],locationF[j], GameN, Goals2[j2], Goals2[j2+1]))
     j += 1
     j2 += 2
     GameN += 1
@@ -82,7 +93,7 @@ try:
     #Check if table FifaWorldCup does not exist and create it
     cursor.execute('''CREATE TABLE IF NOT EXISTS
                       FifaWorldCup(id INTEGER PRIMARY KEY, MatchGroup TEXT, 
-                      TeamHome TEXT, Score TEXT, TeamAway TEXT, Date TEXT, Location TEXT, GameN TEXT unique)''')
+                      TeamHome TEXT, Score TEXT, TeamAway TEXT, Date TEXT, Location TEXT, GameN TEXT unique, GH INT, GA INT)''')
     #Commit the change
     db.commit()
 except Exception as e:
@@ -100,8 +111,8 @@ dbID = 0
 try:
     with db:
         db.execute("DELETE FROM FifaWorldCup")
-        db.executemany('''INSERT INTO FifaWorldCup(MatchGroup, TeamHome, Score, TeamAway, Date, Location, GameN)
-                  VALUES(?,?,?,?,?,?,?)''', GameInfo)
+        db.executemany('''INSERT INTO FifaWorldCup(MatchGroup, TeamHome, Score, TeamAway, Date, Location, GameN, GH, GA)
+                  VALUES(?,?,?,?,?,?,?,?,?)''', GameInfo)
         db.commit()
 except Exception as e:
     #Roll back any change if something goes wrong
