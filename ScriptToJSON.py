@@ -32,6 +32,12 @@ class Groups(Resource):
         query = db.execute("SELECT DISTINCT MatchGroup from FifaWorldCup ORDER BY MatchGroup")
         return {'Groups': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
 
+class Dates(Resource):
+    def get(self):
+        db = db_connect.connect()
+        query = db.execute("SELECT * from FifaWorldCup ORDER BY Date")
+        return {'Date games': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
+
 class GroupInfo(Resource):
     def get(self,g):
         db = db_connect.connect()
@@ -50,16 +56,25 @@ class StadiumInfo(Resource):
     def get(self, s):
         db = db_connect.connect()
         s = '%' + s + '%'
-        query = db.execute("SELECT * from FifaWorldCup WHERE Location LIKE  (?)", (s,))
+        query = db.execute("SELECT * from FifaWorldCup WHERE Location LIKE (?)", (s,))
         return {'Stadium games': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
+
+class DateInfo(Resource):
+    def get(self, d):
+        db = db_connect.connect()
+        d = '%' + d + '%'
+        query = db.execute("SELECT * from FifaWorldCup WHERE Date LIKE (?)", (d,))
+        return {'Date games': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
 
 api.add_resource(Games, '/Games')
 api.add_resource(Teams, '/Teams')
 api.add_resource(Stadiums, '/Stadiums')
 api.add_resource(Groups, '/Groups')
+api.add_resource(Dates, '/Dates')
 api.add_resource(GroupInfo, '/Groups/<g>')
 api.add_resource(TeamInfo, '/Teams/<t>')
 api.add_resource(StadiumInfo, '/Stadiums/<s>')
+api.add_resource(DateInfo, '/Dates/<d>')
 
 if __name__ == '__main__':
     app.run(port='5002')
