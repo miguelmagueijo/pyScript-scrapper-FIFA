@@ -66,15 +66,15 @@ class DateInfo(Resource):
         query = db.execute("SELECT * from FifaWorldCup WHERE Date LIKE (?)", (d,))
         return {'Date games': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
 
-api.add_resource(Games, '/Games')
-api.add_resource(Teams, '/Teams')
-api.add_resource(Stadiums, '/Stadiums')
-api.add_resource(Groups, '/Groups')
-api.add_resource(Dates, '/Dates')
-api.add_resource(GroupInfo, '/Groups/<g>')
-api.add_resource(TeamInfo, '/Teams/<t>')
-api.add_resource(StadiumInfo, '/Stadiums/<s>')
-api.add_resource(DateInfo, '/Dates/<d>')
+api.add_resource(Games, '/Mundial2018')
+api.add_resource(Teams, '/Mundial2018/Teams')
+api.add_resource(Stadiums, '/Mundial2018/Stadiums')
+api.add_resource(Groups, '/Mundial2018/Groups')
+api.add_resource(Dates, '/Mundial2018/Dates')
+api.add_resource(GroupInfo, '/Mundial2018/Groups/<g>')
+api.add_resource(TeamInfo, '/Mundial2018/Teams/<t>')
+api.add_resource(StadiumInfo, '/Mundial2018/Stadiums/<s>')
+api.add_resource(DateInfo, '/Mundial2018/Dates/<d>')
 
 if __name__ == '__main__':
     app.run(port='5002')

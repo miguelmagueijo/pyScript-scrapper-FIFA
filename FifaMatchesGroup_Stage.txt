@@ -1,6 +1,5 @@
 !!!Notice that local time is the time of city where the game will be played and not your time.!!!
 
-
 Group A: Russia 5-0 Saudi Arabia - 14 Jun 2018 - 18:00 Local time - Luzhniki Stadium - Moscow
 
 Group A: Egypt 0-1 Uruguay - 15 Jun 2018 - 17:00 Local time - Ekaterinburg Arena - Ekaterinburg
@@ -73,13 +72,13 @@ Group B: Spain 2-2 Morocco - 25 Jun 2018 - 20:00 Local time - Kaliningrad Stadiu
 
 Group B: IR Iran 1-1 Portugal - 25 Jun 2018 - 21:00 Local time - Mordovia Arena - Saransk
 
-Group C: Australia NULL Peru - 26 Jun 2018 - 17:00 Local time - Fisht Stadium - Sochi
+Group C: Australia 0-2 Peru - 26 Jun 2018 - 17:00 Local time - Fisht Stadium - Sochi
 
-Group C: Denmark NULL France - 26 Jun 2018 - 17:00 Local time - Luzhniki Stadium - Moscow
+Group C: Denmark 0-0 France - 26 Jun 2018 - 17:00 Local time - Luzhniki Stadium - Moscow
 
-Group D: Nigeria NULL Argentina - 26 Jun 2018 - 21:00 Local time - Saint Petersburg Stadium - St. Petersburg
+Group D: Nigeria 1-2 Argentina - 26 Jun 2018 - 21:00 Local time - Saint Petersburg Stadium - St. Petersburg
 
-Group D: Iceland NULL Croatia - 26 Jun 2018 - 21:00 Local time - Rostov Arena - Rostov-On-Don
+Group D: Iceland 1-2 Croatia - 26 Jun 2018 - 21:00 Local time - Rostov Arena - Rostov-On-Don
 
 Group F: Korea Republic NULL Germany - 27 Jun 2018 - 17:00 Local time - Kazan Arena - Kazan
 
