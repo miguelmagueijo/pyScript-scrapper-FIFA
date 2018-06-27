@@ -4,6 +4,8 @@ from sqlalchemy import create_engine
 from json import dumps
 from flask_jsonpify import jsonify
 
+#To run this I runned it in virutal env with all dependencies and I acess by 127.0.0.1:5002/Mundial2018
+
 db_connect = create_engine('sqlite:///db.sqlite3')
 app = Flask(__name__)
 api = Api(app)
