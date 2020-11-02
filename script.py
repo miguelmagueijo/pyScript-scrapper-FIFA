@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import sqlite3
 
-page = requests.get("https://www.fifa.com/worldcup/matches/")
+page = requests.get("https://www.fifa.com/worldcup/archive/russia2018/matches/")
 soup = BeautifulSoup(page.content, 'html.parser')
 print("Code:")
 print(page.status_code)
